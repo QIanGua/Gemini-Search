@@ -1,20 +1,20 @@
-# Gemini Search
+# Gemini 搜索
 
-A Perplexity-style search engine powered by Google's Gemini 2.0 Flash model with grounding through Google Search. Get AI-powered answers to your questions with real-time web sources and citations.
+一个基于 Google Gemini 2.0 Flash 模型的智能搜索引擎,通过 Google 搜索提供实时信息支持。为您的问题提供 AI 驱动的答案,包含实时网络来源和引用。
 
 Created by [@ammaar](https://x.com/ammaar)
 
 ![Kapture 2025-01-04 at 14 35 14](https://github.com/user-attachments/assets/2302898e-03ae-40a6-a16c-301d6b91c5af)
 
 
-## Features
+## 功能特点
 
-- 🔍 Real-time web search integration
-- 🤖 Powered by Google's latest Gemini 2.0 Flash model
-- 📚 Source citations and references for answers
-- 💬 Follow-up questions in the same chat session
-- 🎨 Clean, modern UI inspired by Perplexity
-- ⚡ Fast response times
+- 🔍 实时网络搜索集成
+- 🤖 采用 Google 最新的 Gemini 2.0 Flash 模型
+- 📚 答案包含来源引用和参考
+- 💬 支持同一会话中的后续提问
+- 🎨 简洁现代的用户界面
+- ⚡ 快速响应
 
 ## Tech Stack
 

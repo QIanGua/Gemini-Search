@@ -1,7 +1,7 @@
 {
-  "name": "Gemini Search",
+  "name": "Gemini 搜索",
   "short_name": "Gemini",
-  "description": "A search engine powered by Google's Gemini Flash",
+  "description": "由 Google Gemini Flash 驱动的智能搜索引擎",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FCFCF9",

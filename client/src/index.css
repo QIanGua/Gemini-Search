@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Merriweather:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -57,7 +57,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    font-family: 'Merriweather', Georgia, serif;
+    font-family: 'Noto Sans SC', 'Merriweather', Georgia, sans-serif;
   }
 }
 

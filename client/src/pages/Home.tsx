@@ -22,17 +22,17 @@ export function Home() {
         <div className="flex flex-col items-center mb-8">
           <Logo className="mb-6" />
           <h1 className="text-2xl lg:text-4xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-200">
-            What do you want to know?
+            你想了解什么?
           </h1>
         </div>
-        
+
         <form onSubmit={handleSearch} className="w-full">
           <div className="relative group">
             <input
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Ask anything..."
+              placeholder="输入你的问题..."
               className="w-full px-6 py-4 text-lg rounded-full border border-gray-200 
                        focus:border-google-blue focus:ring-4 focus:ring-google-blue/20 outline-none 
                        transition-all duration-300 shadow-sm 
@@ -40,10 +40,10 @@ export function Home() {
                        dark:bg-gray-800 dark:border-gray-700 dark:text-white
                        dark:focus:border-google-blue dark:group-hover:border-gray-600
                        pr-14 truncate"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              style={{ fontFamily: 'Noto Sans SC, sans-serif' }}
               autoFocus
             />
-            <button 
+            <button
               type="submit"
               disabled={!query.trim()}
               className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full
@@ -57,10 +57,7 @@ export function Home() {
         </form>
 
         <div className="mt-8 text-center text-sm text-gray-500 dark:text-gray-400 animate-fade-in space-y-1">
-          <div>Powered by Gemini 2.0</div>
-          <div>
-            Created by <a href="http://x.com/ammaar" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 dark:hover:text-gray-300 transition-colors">@ammaar</a>
-          </div>
+          <div>由 Gemini 2.0 提供支持</div>
         </div>
       </div>
     </div>

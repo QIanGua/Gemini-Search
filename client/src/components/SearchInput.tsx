@@ -12,8 +12,8 @@ interface SearchInputProps {
   large?: boolean;
 }
 
-export function SearchInput({ 
-  onSearch, 
+export function SearchInput({
+  onSearch,
   isLoading = false,
   initialValue = '',
   autoFocus = false,
@@ -45,7 +45,7 @@ export function SearchInput({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask anything..."
+          placeholder={large ? "输入你的问题..." : "继续提问..."}
           className={cn(
             "pl-10 pr-4 transition-all duration-200",
             large && "h-12 text-lg rounded-lg",
@@ -56,7 +56,7 @@ export function SearchInput({
         />
       </div>
 
-      <Button 
+      <Button
         onClick={handleSubmit}
         disabled={!query.trim() || isLoading}
         className={cn(

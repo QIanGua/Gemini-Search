@@ -9,7 +9,7 @@ interface FollowUpInputProps {
   isLoading?: boolean;
 }
 
-export function FollowUpInput({ 
+export function FollowUpInput({
   onSubmit,
   isLoading = false,
 }: FollowUpInputProps) {
@@ -36,7 +36,7 @@ export function FollowUpInput({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Ask a follow-up question..."
+          placeholder="继续提问..."
           className={cn(
             "transition-all duration-200",
             "focus-visible:ring-1 focus-visible:ring-primary",
@@ -47,7 +47,7 @@ export function FollowUpInput({
         />
       </div>
 
-      <Button 
+      <Button
         onClick={handleSubmit}
         disabled={!query.trim() || isLoading}
         className="flex items-center justify-center gap-2 w-full sm:w-auto"
