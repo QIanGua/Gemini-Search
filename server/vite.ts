@@ -52,21 +52,34 @@ export async function setupVite(app: Express, server: Server) {
     appType: "custom",
   });
 
+  // 1. 先处理 API 路由
+  app.use("/api/*", (req, res, next) => {
+    if (!res.headersSent) {
+      next();
+    }
+  });
+
+  // 2. Vite 开发服务器中间件
   app.use(vite.middlewares);
+
+  // 3. HTML 回退路由
   app.use("*", async (req, res, next) => {
     const url = req.originalUrl;
 
     try {
-      const clientTemplate = path.resolve(
-        __dirname,
-        "..",
-        "client",
-        "index.html"
+      // 如果是 API 请求，跳过
+      if (url.startsWith("/api")) {
+        return next();
+      }
+
+      const template = await fs.promises.readFile(
+        path.resolve(__dirname, "..", "client", "index.html"),
+        "utf-8"
       );
 
-      const template = await fs.promises.readFile(clientTemplate, "utf-8");
-      const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      const html = await vite.transformIndexHtml(url, template);
+
+      res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -74,18 +87,4 @@ export async function setupVite(app: Express, server: Server) {
   });
 }
 
-export function serveStatic(app: Express) {
-  const publicPath = path.resolve(__dirname, "..", "dist", "public");
-
-  if (!fs.existsSync(publicPath)) {
-    throw new Error(
-      `Could not find the build directory: ${publicPath}, make sure to build the client first`
-    );
-  }
-
-  app.use(express.static(publicPath));
-
-  app.get("*", (_req, res) => {
-    res.sendFile(path.resolve(publicPath, "index.html"));
-  });
-}
+export {};
