@@ -30,12 +30,17 @@ try {
       '.ts': 'ts',
       '.tsx': 'tsx'
     },
-    sourcemap: true,
-    minify: true,
+    sourcemap: 'inline',
+    minify: false,
+    // Keep names readable
+    keepNames: true,
     // Additional settings to handle native modules
     mainFields: ['module', 'main'],
     conditions: ['node', 'import', 'default'],
-    packages: 'external'
+    packages: 'external',
+    // Make output more readable
+    charset: 'utf8',
+    logLevel: 'info'
   })
   console.log('⚡ Server build complete')
 } catch (error) {
